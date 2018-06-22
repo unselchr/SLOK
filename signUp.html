@@ -121,7 +121,8 @@
   }
 };
   firebase.initializeApp(config);
-    $("#submitAccount").on("click",function(){
+    $("#submitAccount").on("click",function(event){
+        event.preventDefault();
         
         var email=$("#emailInput").val();
         var password=$("#passwordInput").val();
@@ -131,7 +132,7 @@
                 // Handle Errors here.
                 var errorCode = error.code;
                 var errorMessage = error.message;
-                alert("errorMessage");
+                alert(errorMessage);
                 console.log(error);
                 console.log(error.code);
                 console.log(errorMessage);
