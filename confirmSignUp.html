@@ -67,22 +67,8 @@
             <div class="col-lg-12">
                 <div class="card" style="width: 25rem;">
                     <div class="card-body">
-                        <h6 class="card-title">Nation States 3 sign up form</h6>
-                        <form>
-                            <div class="form-group">
-                                <label for="emailInput" >Email:</label>
-                                <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                                <label for="passwordInput" >Password:</label>
-                                <input type="password" class="form-control" id="passwordInput" placeholder="create a password">
-                            </div>
-                            <div class="form-group">
-                                <label for="passwordConfirm" >Confirm Password:</label>
-                                <input type="password" class="form-control" id="passwordConfirm" placeholder="retype password">
-                            </div>
-                            <button type="submit" id="submitAccount" class="btn btn-primary">Submit</button>
-                        </form>
+                        <h6 class="card-title">Nation States 3 Confirm Email</h6>
+                        <button id="confirmButton">Confirm my Email</button>
                     </div>
                 </div>
             </div>
@@ -91,57 +77,6 @@
     <footer>
 
     </footer>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB-A-yUDMS-iTlwR3ueb9gOnAAy5BkYWLc",
-    authDomain: "nationstates3-288aa.firebaseapp.com",
-    databaseURL: "https://nationstates3-288aa.firebaseio.com",
-    projectId: "nationstates3-288aa",
-    storageBucket: "nationstates3-288aa.appspot.com",
-    messagingSenderId: "552007883257"
-  };
-  var actionCodeSettings = {
-  // URL you want to redirect back to. The domain (www.example.com) for this
-  // URL must be whitelisted in the Firebase Console.
-  url: 'https://unselchr.github.io/NationStates3/confirmSignUp.html',
-  // This must be true.
-  handleCodeInApp: true,
-  iOS: {
-    bundleId: 'com.example.ios'
-  },
-  android: {
-    packageName: 'com.example.android',
-    installApp: true,
-    minimumVersion: '12'
-  }
-};
-  firebase.initializeApp(config);
-    $("#submitAccount").on("click",function(){
-        
-        var email=$("#emailInput").val();
-        var password=$("#passwordInput").val();
-        var passwordConfirm=$("#passwordConfirm").val();
-        if(password===passwordConfirm){
-            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                alert("errorMessage");
-                console.log(error);
-                console.log(error.code);
-                console.log(errorMessage);
-                // ...
-            });
-        }
-        else{
-            alert("passwords do not match!");
-        }
-    })
-</script>
-</body>
-</html>
+    <script>
+
+    </script>
