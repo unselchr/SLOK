@@ -2,10 +2,10 @@
 
 // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyDNODXWqLDS6-p65LOMk-y50MJfmo5lr3k",
-    authDomain: "comicnewsbot.firebaseapp.com",
-    databaseURL: "https://comicnewsbot.firebaseio.com",
-    projectId: "comicnewsbot",
+    apiKey: "AIzaSyB-A-yUDMS-iTlwR3ueb9gOnAAy5BkYWLc",
+    authDomain: "nationstates3-288aa.firebaseapp.com",
+    databaseURL: "https://nationstates3-288aa.firebaseio.com",
+    projectId: "nationstates3-288aa",
     storageBucket: "",
     messagingSenderId: "660818086311"
   };
@@ -92,4 +92,19 @@ $("#signOut").on("click",function(){
         // An error happened.
         console.log(error);
     });
+})
+$("#TEST").on("click",function(){
+  var user = firebase.auth().currentUser;
+  var name, email, photoUrl, uid, emailVerified;
+  
+  if (user != null) {
+    name = user.displayName;
+    email = user.email;
+    photoUrl = user.photoURL;
+    emailVerified = user.emailVerified;
+    uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                     // this value to authenticate with your backend server, if
+                     // you have one. Use User.getToken() instead.
+  }
+  $("#userID").text(email);
 })
