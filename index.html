@@ -16,9 +16,9 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
 
 
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.css" />
-    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
 
 </head>
 <body>
@@ -40,17 +40,7 @@
                         <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In</a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <form>
-                              <div class="form-group">
-                                <label for="loginEmail">Email:</label>
-                                <input type="email"class="form-control" id="loginEmail">
-                              </div>
-                              <div class="form-group">
-                                <label for="loginPassword">Password:</label>
-                                <input type="password"class="form-control" id="loginPassword">
-                              </div>
-                              <button type="submit" id="signIn" class="btn btn-primary">Sign In</button>
-                            </form>
+                            <div id="firebaseui-auth-container"></div>
                           </div>
                         </li>
                        
@@ -61,34 +51,14 @@
                   </nav>
     </header>
     <div class="container-fluid">
-        
+        <div><span id="loader">loading...</span></div>
     </div>
+    <button id="TEST">TEST</button>
+    <div>your id:<span id="userID"></span></div>
     <footer>
       
     </footer>
 
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB-A-yUDMS-iTlwR3ueb9gOnAAy5BkYWLc",
-    authDomain: "nationstates3-288aa.firebaseapp.com",
-    databaseURL: "https://nationstates3-288aa.firebaseio.com",
-    projectId: "nationstates3-288aa",
-    storageBucket: "nationstates3-288aa.appspot.com",
-    messagingSenderId: "552007883257"
-  };
-  firebase.initializeApp(config);
-</script>
-<script src="assets/js/default.js"></script>
-<script>
-  ui.start('#firebaseui-auth-container', {
-  signInOptions: [
-    firebase.auth.EmailAuthProvider.PROVIDER_ID//,
-    //requireDisplayName: false
-  ],
-  // Other config options...
-  });
-
-</script>
+<script src="assets/js/accountSystem.js"></script>
 </body>
 </html>
