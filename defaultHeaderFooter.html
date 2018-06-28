@@ -1,45 +1,45 @@
 <header id="customHeader">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#index.html">SLOK</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-              
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="signUp.html">Sign up for SLOK!</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Sign In
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <form>
-                          <div class="form-group">
-                            <label for="loginEmail">Email:</label>
-                            <input type="email"class="form-control" id="loginEmail">
-                          </div>
-                          <div class="form-group">
-                            <label for="loginPassword">Password:</label>
-                            <input type="password"class="form-control" id="loginPassword">
-                          </div>
-                          <button type="submit" id="signIn" class="btn btn-primary">Sign In</button>
-                        </form>
-                      </div>
-                    </li>
-                   
-                  </ul>
-                  <button  id="signOut" class="btn btn-primary">Sign Out</button>
-                  <img id="NSLogo" alt="logo" src="assets/pictures/Fallerein_Party.png">
-                </div>
-              </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#index.html">SLOK</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item visibleSignedOut">
+          <a class="nav-link " href="signUp.html">Sign up for SLOK!</a>
+        </li>
+        <li class="nav-item dropdown visibleSignedOut">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Sign In</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-item" id="firebaseui-auth-container"></div>
+          </div>
+        </li>
+        <li class="nav-item visibleSignedIn dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"><span class="userName"></span></a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item">Friends</a>
+            <a class="dropdown-item">My Games</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link visibleSignedIn" href="myAccount.html">My Account</a>
+        </li>
+      </ul>
+      <button id="signOut" class="btn btn-primary visibleSignedIn">Sign Out</button>
+      <img id="NSLogo" alt="logo" src="assets/pictures/Fallerein_Party.png">
+    </div>
+  </nav>
 </header>
-
-
 <footer>
 
 </footer>
