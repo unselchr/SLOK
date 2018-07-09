@@ -77,7 +77,9 @@ $("#submitAccount").on("click", function (event) {
       console.log(error.code);
       console.log(errorMessage);
       // ...
+
     });
+    document.location.href=myAccount.html;
   }
   else {
     alert("passwords do not match!");
@@ -112,13 +114,14 @@ firebase.auth().onAuthStateChanged(function (user) {
   var user = firebase.auth().currentUser;
   if (user != null) {
     // User is signed in.
-    console.log("user " + user.uid + " has logged in");
+    
     $(".visibleSignedIn").css("display", "list-item");
     $(".visibleSignedOut").css("display", "none");
     var userName
     firebase.database().ref("/users/" + user.uid).once("value").then(function (snapshot) {
       userName = snapshot.val().userName;
-      $(".userName").text(userName);
+      $("#userDropDown").text(userName);
+      console.log("user " + userName + " has logged in");
     })
   } else {
     // No user is signed in.
