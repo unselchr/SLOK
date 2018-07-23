@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Backend server for project SLOK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unselchr/SLOK.git"
+  },
+  "author": "Chris Unsell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unselchr/SLOK/issues"
+  },
+  "homepage": "https://github.com/unselchr/SLOK#readme",
+  "dependencies": {
+    "firebase-admin": "^5.13.0"
+  }
+}

@@ -98,7 +98,7 @@ $("#signOut").on("click", function () {
 $("#TEST").on("click", function () {
   var user = firebase.auth().currentUser;
   var name, email, photoUrl, uid, emailVerified;
-
+  var loginToken=user.getToken();//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   if (user != null) {
     name = user.displayName;
     email = user.email;
