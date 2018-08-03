@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/unselchr/SLOK#readme",
   "dependencies": {
-    "firebase-admin": "^5.13.0"
+    "firebase-admin": "^5.13.0",
+    "mysql": "^2.16.0"
   }
 }
