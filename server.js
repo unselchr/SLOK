@@ -9,27 +9,26 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 ///////////////////////////////////
 app.get("/",function(req,res){
-    console.log(req.body);
-    res.sendFile(path.join(__dirname,"../index.html"));
+    console.log(req.query);
+    res.sendFile(path.join(__dirname,"assets/html/index.html"));
 });
 app.get("/assets/pictures/Fallerein_Party.png",function(req,res){
-    res.sendFile(path.join(__dirname,"../assets/pictures/Fallerein_Party.png"));
+    res.sendFile(path.join(__dirname,"assets/pictures/Fallerein_Party.png"));
 });
 app.get("/assets/styles/headerCustom.css",function(req,res){
-    res.sendFile(path.join(__dirname,"../assets/styles/headerCustom.css"));
+    res.sendFile(path.join(__dirname,"/assets/styles/headerCustom.css"));
 });
 app.get("/assets/styles/default.css",function(req,res){
-    res.sendFile(path.join(__dirname,"../assets/styles/default.css"));
+    res.sendFile(path.join(__dirname,"assets/styles/default.css"));
 });
 app.get("/assets/js/accountSystem.js",function(req,res){
-    res.sendFile(path.join(__dirname,"../assets/js/default.js"));
+    res.sendFile(path.join(__dirname,"assets/js/default.js"));
 });
 app.get("/assets/js/accountSystem.js",function(req,res){
-    res.sendFile(path.join(__dirname,"../assets/js/default.js"));
+    res.sendFile(path.join(__dirname,"assets/js/default.js"));
 });
 app.get("/assets/pictures/background.png",function(req,res){
-    res.sendFile(path.join(__dirname,"../assets/pictures/background.png"));
-    console.log(req.body);
+    res.sendFile(path.join(__dirname,"assets/pictures/background.png"));
 });
 ///////////////////////////////////
 app.listen(PORT,function(){
