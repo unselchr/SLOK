@@ -1,0 +1,13 @@
+* unselchr.com/
+- home
+- users
+    - :individual users
+    - my page
+- games
+    - my games
+        - :game ur in
+    - browse games
+        - :indevidual games
+- current game
+    - overview
+    - ect...
