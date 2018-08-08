@@ -1,0 +1,111 @@
+<body>
+    <header id="customHeader">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">SLOK</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item visibleSignedOut">
+                        <a class="nav-link " href="signUp.html">Sign up for SLOK!</a>
+                    </li>
+                    <li class="nav-item dropdown visibleSignedOut">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Sign In</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-item" id="firebaseui-auth-container"></div>
+                        </div>
+                    </li>
+                    <li class="nav-item visibleSignedIn dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <span id="userDropDown">USERNAME</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item">Friends</a>
+                            <a class="dropdown-item">My Games</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link visibleSignedIn" href="myAccount.html">My Account</a>
+                    </li>
+                </ul>
+                <button id="signOut" class="btn btn-primary visibleSignedIn">Sign Out</button>
+                <img id="NSLogo" alt="logo" src="assets/pictures/Fallerein_Party.png">
+            </div>
+        </nav>
+    </header>
+    <footer>
+
+    </footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="#">Wiki</a>
+                        </h3>
+                        <a class="card-link" href="#">Link1</a>
+                        <a class="card-link" href="#">Link2</a>
+                        <a class="card-link" href="#">Link3</a>
+                        <a class="card-link" href="#">Link4</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">About the Developers</h3>
+                        <p>Project SLOK has been a colaboration between three friends. One programmer, one historian and an
+                            aerospace engineer. Our personal websites and contact info can be found
+                            <a href="https://unselchr.github.io/">here.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div id="slokStats" class="card-body">
+                        <h3 class="card-title">SLOK statistics</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/accountSystem.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyB-A-yUDMS-iTlwR3ueb9gOnAAy5BkYWLc",
+            authDomain: "nationstates3-288aa.firebaseapp.com",
+            databaseURL: "https://nationstates3-288aa.firebaseio.com",
+            projectId: "nationstates3-288aa",
+            storageBucket: "",
+            messagingSenderId: "660818086311"
+        };
+        firebase.initializeApp(config);
+
+        $(document).ready(function (event) {
+            var db = firebase.database();
+            db.ref("/metrics").once("value").then(function (snap) {
+                $("#slokStats").append($("<h6>").text("Total number of registered players: " + snap.val().playerCount));
+                $("#slokStats").append($("<h6>").text("Games finished: " + snap.val().gamesFinished));
+                $("#slokStats").append($("<h6>").text("Players banned: " + snap.val().beans));
+                $("#slokStats").append($("<h6>").text("Total casualties in game: " + snap.val().casualties));
+                //console.log(snap.val().victories);
+                var victories = snap.val().victories;
+                Object.keys(victories).forEach(function (victory) {
+                    //console.log(victory);
+                    $("#slokStats").append($("<h6>").text(victory + " victories won: " + victories[victory]));
+                })
+                $("#slokStats").append($("<h6>").text("Times lead developer left a meeting to use the bathroom: " + snap.val().chrisBreaks));
+            })
+        })
+    </script>
+</body>

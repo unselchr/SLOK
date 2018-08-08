@@ -5,9 +5,9 @@
     - my page
 - games
     - my games
-        - :game ur in
     - browse games
-        - :indevidual games
+    - game
+        - :game identifier
 - current game
     - overview
     - ect...
