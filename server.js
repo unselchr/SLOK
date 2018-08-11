@@ -8,6 +8,7 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 app.engine("handlebars",exphbs({defaultLayout:"main"}));
 app.set("view engine","handlebars");
+app.use(express.static("public"));
 //////////////////ROUTES///////////////////////
 app.get("/",function(req,res){
     res.render("index",{});
@@ -47,18 +48,18 @@ app.get("/currentGame",function(req,res){
 
 })
 //ROUTES FOR ASSETS//
-app.get("/assets/html/:filename",function(req,res){
-    res.sendFile(path.join(__dirname,"/assets/html/"+req.params.filename));
-})
-app.get("/assets/styles/:filename",function(req,res){
-    res.sendFile(path.join(__dirname,"/assets/styles/"+req.params.filename));
-})
-app.get("/assets/pictures/:filename",function(req,res){
-    res.sendFile(path.join(__dirname,"/assets/pictures/"+req.params.filename));
-})
-app.get("/assets/js/:filename",function(req,res){
-    res.sendFile(path.join(__dirname,"/assets/js/"+req.params.filename));
-})
+// app.get("/assets/html/:filename",function(req,res){
+//     res.sendFile(path.join(__dirname,"/assets/html/"+req.params.filename));
+// })
+// app.get("/assets/styles/:filename",function(req,res){
+//     res.sendFile(path.join(__dirname,"/assets/styles/"+req.params.filename));
+// })
+// app.get("/assets/pictures/:filename",function(req,res){
+//     res.sendFile(path.join(__dirname,"/assets/pictures/"+req.params.filename));
+// })
+// app.get("/assets/js/:filename",function(req,res){
+//     res.sendFile(path.join(__dirname,"/assets/js/"+req.params.filename));
+// })
 ////////////////END ROUTES////////////////////
 app.listen(PORT,function(){
     console.log("App listening on port: "+PORT);
